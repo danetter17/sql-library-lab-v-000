@@ -11,7 +11,6 @@ def select_name_and_motto_of_char_with_longest_motto
       DESC LIMIT 1"
 end
 
-
 def select_value_and_count_of_most_prolific_species
   "SELECT species, COUNT(species) AS numb_species FROM characters
       GROUP BY species
@@ -20,7 +19,8 @@ def select_value_and_count_of_most_prolific_species
 end
 
 def select_name_and_series_subgenres_of_authors
-  "SELECT name, "
+  "SELECT name, series.subgenre_id FROM authors
+      JOIN series ON series.author_id = author.id"
 end
 
 def select_series_title_with_most_human_characters
